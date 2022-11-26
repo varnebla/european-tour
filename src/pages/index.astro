@@ -1,0 +1,55 @@
+---
+import BlurredBubble from '../components/BlurredBubble.astro';
+
+const heroImageDesktop = '../../assets/images/hero-image-desktop.webp';
+const heroImageLaptop = '../../assets/images/hero-image-laptop.webp';
+const heroImageTablet = '../../assets/images/hero-image-tablet.webp';
+const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
+---
+
+<html lang="en" class="min-h-screen">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 z-0 overflow-hidden pointer-events-none"
+    >
+      <BlurredBubble color="#22c55e" customClass="w-96 h-96 left-14 top-0" />
+      <BlurredBubble
+        color="#cf2436"
+        customClass="w-96 h-96 right-14 top-[500px]"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute z-0 inset-0 min-h-screen brightness-50"
+      >
+        <picture class="absolute inset-0 z-10 w-full min-h-screen object-cover">
+          <source srcset={heroImageMobile} media="(max-width: 440px)" />
+          <source srcset={heroImageTablet} media="(max-width: 640px)" />
+          <source srcset={heroImageLaptop} media="(max-width: 1920px)" />
+          <img
+            src={heroImageDesktop}
+            alt=""
+            class="w-full min-h-screen object-cover"
+          />
+        </picture>
+      </div>
+    </div>
+    <main class="w-full max-w-6xl mx-auto h-full">
+      <section class="relative flex items-center h-full">
+        <h1
+          class="max-w-kg font-bold leading-tight text-6xl tracking-tight relative z-10 text-white"
+        >
+          Bienvenidos a
+          <span>Wagsuiksle</span>
+        </h1>
+      </section>
+    </main>
+  </body>
+</html>

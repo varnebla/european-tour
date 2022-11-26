@@ -1,0 +1,21 @@
+---
+const { color, customClass } = Astro.props;
+---
+
+<style define:vars={{ color }}>
+  .bg-green-gradient-radial {
+    background-image: radial-gradient(
+      circle,
+      var(--color) 0,
+      rgba(161, 252, 70, 0) 71%
+    );
+  }
+</style>
+
+<div
+  class:list={[
+    'absolute scale-150 rounded-full bg-green-gradient-radial  opacity-20',
+    customClass
+  ]}
+>
+</div>
