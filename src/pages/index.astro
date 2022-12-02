@@ -1,5 +1,6 @@
 ---
 import BlurredBubble from '../components/BlurredBubble.astro';
+import SectionTitle from '../components/SectionTitle.astro';
 
 const heroImageDesktop = '../../assets/images/hero-image-desktop.webp';
 const heroImageLaptop = '../../assets/images/hero-image-laptop.webp';
@@ -11,11 +12,19 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen font-dm-sans bg-background">
     <div
       aria-hidden="true"
       class="absolute inset-0 z-0 overflow-hidden pointer-events-none"
@@ -27,7 +36,7 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
       />
       <div
         aria-hidden="true"
-        class="absolute z-0 inset-0 min-h-screen brightness-50"
+        class="absolute z-0 inset-0 min-h-screen brightness-50 saturate-50"
       >
         <picture class="absolute inset-0 z-10 w-full min-h-screen object-cover">
           <source srcset={heroImageMobile} media="(max-width: 440px)" />
@@ -41,14 +50,150 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
         </picture>
       </div>
     </div>
-    <main class="w-full max-w-6xl mx-auto h-full">
-      <section class="relative flex items-center h-full">
+    <main class="w-full max-w-6xl mx-auto h-full px-4">
+      <section
+        class="relative min-h-screen flex flex-col items-center justify-center gap-y-4 h-full z-10 text-background"
+      >
         <h1
-          class="max-w-kg font-bold leading-tight text-6xl tracking-tight relative z-10 text-white"
+          class="max-w-kg font-dm-serif leading-tight tracking-wide max-w-[60ch] flex flex-col gap-y-3 text-7xl md:text-9xl uppercase"
         >
-          Bienvenidos a
-          <span>Wagsuiksle</span>
+          Budapest
         </h1>
+        <h2 class="uppercase tracking-widest text-lg md:text-xl font-light">
+          - Descubre la perla del Danubio -
+        </h2>
+      </section>
+      <section
+        class="w-full flex flex-col md:flex-row md:items-center gap-x-4 min-h-screen"
+      >
+        <article class="w-full flex-col items-center text-xl">
+          <SectionTitle extraClasses="mb-14 text-primary"
+            >¿Cuándo nos vamos?</SectionTitle
+          >
+          <p class="max-w-xl">
+            Proponemos realizar esta aventura en la
+            <span class="underline decoration-4 decoration-tertiary">
+              primavera de 2023</span
+            >. Durante esa época, podremos conocer los lugares de interés y
+            atracciones de la ciudad en condiciones agradables, sin la
+            congestión de la temporada alta.
+          </p>
+          <p class="max-w-xl">
+            Según datos de skyscanner, las
+            <span class="underline decoration-4 decoration-tertiary"
+              >fechas más baratas son las de abril.</span
+            >
+          </p>
+        </article>
+        <img
+          src="../../assets/images/tranvia.webp"
+          alt="Imágen viajar"
+          class="flex-1 max-w-sm max-h-[600px] object-cover"
+        />
+      </section>
+      <section class="min-h-screen py-4">
+        <SectionTitle extraClasses="text-primary text-center">
+          ¿Qué vamos a descubrir allí?
+        </SectionTitle>
+        <p class="text-xl max-w-[45ch] mx-auto text-center mb-10">
+          Hay infinidad de cosas para descubrir en Budapest, pero con un
+          planning diario nos resultará más fácil organizar nuestra estancia en
+          la ciudad.
+        </p>
+        <article class="text-xl relative max-w-fit mx-auto gap-y-6 pl-6">
+          <h2 class="text-3xl font-dm-serif mb-4 text-primary">Día 1</h2>
+          <div
+            class="absolute top-0 bottom-0 right-0 left-0 w-1 h-full bg-black"
+          >
+          </div>
+          <div class="max-w-[50ch] mb-8 relative w-full">
+            <div
+              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
+            >
+            </div>
+            <h3 class="text-2xl font-dm-serif mb-3">Parlamento de Budapest</h3>
+            <p>
+              La primera parada de nuestro viaje es el icónico Parlamento de
+              Budapest. Es muy recomendable hacer la visita del interior,
+              también disponible en castellano. Se pueden reservar por
+              anticipado en la <a
+                href="https://jegymester.hu/production/480000/hungarian-parliament-building-parliament-visit"
+                class="text-secondary underline decoration-3">web oficial</a
+              >.
+            </p>
+          </div>
+
+          <div class="max-w-[50ch] mb-8 relative w-full">
+            <div
+              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
+            >
+            </div>
+            <h3 class="text-2xl font-dm-serif mb-3">
+              Free Tour + La Gran Sinagoga
+            </h3>
+            <p>
+              Una de las mejores maneras de conocer la ciudad es haciendo <em
+                >free tours</em
+              >. Suelen ser soluciones económicas y amenas para visitar un
+              montón de sitios y saber su historia. Podremos realizar uno por el
+              centro de la ciudad que finaliza en La Gran Sinagoga, y acceder a
+              ella posteriormente.
+            </p>
+          </div>
+
+          <div class="max-w-[50ch] relative w-full">
+            <div
+              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
+            >
+            </div>
+            <h3 class="text-2xl font-dm-serif mb-3">
+              Plaza Vorosmarty + Gran Noria de Budapest
+            </h3>
+            <p>
+              De camino al siguiente destino, nos cruzaremos con estos dos
+              puntos a visitar como son la Gran Noria o la Plaza Vorosmarty. En
+              esta plaza suele celebrarse el mercadillo de Navidad de la ciudad,
+              pero como no será la época, podremos ver el mítico <span
+                class="underline decoration-4 decoration-tertiary"
+                >Café Gerbeaud</span
+              >.
+            </p>
+          </div>
+
+          <div class="max-w-[50ch] mb-8 relative w-full">
+            <div
+              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
+            >
+            </div>
+            <h3 class="text-2xl font-dm-serif mb-3">Basílica de San Esteban</h3>
+            <p>
+              La basílica de San Esteban guarda la reliquia de una mano de San
+              Esteban. Su interior es un lugar muy bonito de visitar, pero
+              además podemos subir a su cúpula para disfrutar de las vistas de
+              la ciudad. Podemos reservar nuestra entrada en la <a
+                href="https://www.bazilika.jegy.eu/"
+                class="text-secondary underline decoration-3">web oficial</a
+              >.
+            </p>
+          </div>
+
+          <div class="max-w-[50ch] mb-8 relative w-full">
+            <div
+              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
+            >
+            </div>
+            <h3 class="text-2xl font-dm-serif mb-3">Ruin bar</h3>
+            <p>
+              Para terminar el día, podemos acercarnos a uno de los famosos <em
+                >ruin bars</em
+              > que se encuentran en la ciudad. Se trata de edificios "en ruinas"
+              convertidos en <span
+                class="underline decoration-4 decoration-tertiary"
+                >bares con aires alternativos y decadentes</span
+              > .
+            </p>
+          </div>
+        </article>
       </section>
     </main>
   </body>
