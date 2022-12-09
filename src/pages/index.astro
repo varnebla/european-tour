@@ -3,11 +3,92 @@ import BlurredBubble from '../components/BlurredBubble.astro';
 import SectionTitle from '../components/SectionTitle.astro';
 import TimeLineItem from '../components/TimeLineItem.astro';
 import TimeLineGraphic from '../components/TimeLineGraphic.astro';
+import PhotosSlider from '../components/PhotosSlider.astro';
+import Card from '../components/Card.astro';
 
 const heroImageDesktop = '../../assets/images/hero-image-desktop.webp';
 const heroImageLaptop = '../../assets/images/hero-image-laptop.webp';
 const heroImageTablet = '../../assets/images/hero-image-tablet.webp';
 const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
+
+const firstDayPictures = [
+  {
+    source: '../../assets/images/timeline/parlamento.webp',
+    title: 'Parlamento'
+  },
+  {
+    source: '../../assets/images/timeline/sinagoga.webp',
+    title: 'Gran Sinagoga'
+  },
+  {
+    source: '../../assets/images/timeline/noria.webp',
+    title: 'Gran Noria'
+  },
+  {
+    source: '../../assets/images/timeline/san_esteban.webp',
+    title: 'San Esteban'
+  },
+  {
+    source: '../../assets/images/timeline/ruinbar.webp',
+    title: 'Ruin Bar'
+  }
+];
+const secondDayPictures = [
+  {
+    source: '../../assets/images/timeline/funicular.webp',
+    title: 'Funicular'
+  },
+  {
+    source: '../../assets/images/timeline/castillo-buda.webp',
+    title: 'Castillo de Buda'
+  },
+  {
+    source: '../../assets/images/timeline/matias.webp',
+    title: 'Fuente Matías'
+  },
+  {
+    source: '../../assets/images/timeline/bastion-pescadores.webp',
+    title: 'Bastión de los Pescadores'
+  },
+  {
+    source: '../../assets/images/timeline/puente-cadenas.webp',
+    title: 'Puente de las Cadenas'
+  },
+  {
+    source: '../../assets/images/timeline/zapatos.webp',
+    title: 'Zapatos del Danubio'
+  },
+  {
+    source: '../../assets/images/timeline/parisi-udvar.webp',
+    title: 'Galería Párisi Udvar'
+  },
+  {
+    source: '../../assets/images/timeline/liberty-bridge-szabadsag.webp',
+    title: 'Puente de la Libertad'
+  }
+];
+const thirdDayPictures = [
+  {
+    source: '../../assets/images/timeline/balneario.webp',
+    title: 'Balneario de Széchenyi'
+  },
+  {
+    source: '../../assets/images/timeline/plaza-heroes.webp',
+    title: 'Plaza de los héroes'
+  },
+  {
+    source: '../../assets/images/timeline/castle-vajdahunyad.webp',
+    title: 'Escultura del anónimo'
+  },
+  {
+    source: '../../assets/images/timeline/opera.webp',
+    title: 'Ópera de Budapest'
+  },
+  {
+    source: '../../assets/images/timeline/new-york-cafe-budapesr.webp',
+    title: 'New York Cafe'
+  }
+];
 ---
 
 <html lang="en" class="min-h-screen">
@@ -54,7 +135,7 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
     </div>
     <main class="w-full max-w-6xl mx-auto h-full px-4">
       <section
-        class="relative min-h-screen flex flex-col items-center justify-center gap-y-4 h-full z-10 text-background"
+        class="relative min-h-screen flex flex-col items-center justify-center gap-y-4 h-full z-10 text-background mb-12"
       >
         <h1
           class="max-w-kg font-dm-serif leading-tight tracking-wide max-w-[60ch] flex flex-col gap-y-3 text-7xl md:text-9xl uppercase"
@@ -66,7 +147,7 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
         </h2>
       </section>
       <section
-        class="w-full flex flex-col md:flex-row md:items-center gap-x-4 min-h-screen"
+        class="w-full flex flex-col md:flex-row md:items-center gap-y-4 gap-x-4 min-h-screen mb-12"
       >
         <article class="w-full flex-col items-center text-xl">
           <SectionTitle extraClasses="mb-14 text-primary"
@@ -93,7 +174,7 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
           class="flex-1 max-w-sm max-h-[600px] object-cover"
         />
       </section>
-      <section class="min-h-screen py-4">
+      <section class="min-h-screen py-4 mb-12">
         <SectionTitle extraClasses="text-primary text-center">
           ¿Qué vamos a descubrir allí?
         </SectionTitle>
@@ -102,7 +183,7 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
           planning diario nos resultará más fácil organizar nuestra estancia en
           la ciudad.
         </p>
-        <article class="text-xl relative max-w-fit mx-auto pl-12 mb-36">
+        <article class="text-xl relative max-w-fit mx-auto pl-12 mb-16">
           <h2 class="text-3xl font-dm-serif mb-4 text-primary">Día 1</h2>
           <TimeLineGraphic />
           <TimeLineItem title="Parlamento de Budapest">
@@ -160,7 +241,9 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
             </p>
           </TimeLineItem>
         </article>
-        <article class="text-xl relative max-w-fit mx-auto pl-12 mb-36">
+        <PhotosSlider pictures={firstDayPictures} />
+
+        <article class="text-xl relative max-w-fit mx-auto pl-12 mt-20 mb-16">
           <h2 class="text-3xl font-dm-serif mb-4 text-primary">Día 2</h2>
           <TimeLineGraphic />
           <TimeLineItem title="Castillo de Buda">
@@ -228,7 +311,8 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
             </p>
           </TimeLineItem>
         </article>
-        <article class="text-xl relative max-w-fit mx-auto pl-12">
+        <PhotosSlider pictures={secondDayPictures} />
+        <article class="text-xl relative max-w-fit mx-auto pl-12 mt-20 mb-16">
           <h2 class="text-3xl font-dm-serif mb-4 text-primary">Día 3</h2>
           <TimeLineGraphic />
           <TimeLineItem title="Balneario de Széchenyi">
@@ -284,7 +368,31 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
             </p>
           </TimeLineItem>
         </article>
-        <!-- GALERIA DE IMÁGENES AQUI -->
+        <PhotosSlider pictures={thirdDayPictures} />
+      </section>
+      <section class="min-h-screen py-4 mb-12">
+        <SectionTitle extraClasses="text-primary text-center">
+          A tener en cuenta:
+        </SectionTitle>
+        <article class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <Card title="Clima">
+            Nos encontraremos con un clima primaveral, con temperaturas frescas
+            cercanas a los 20 grados durante el día y 10 grados por la noche.
+          </Card>
+          <Card title="Idioma">
+            El idioma utilizado en Hungría es el húngaro, pero no hay que
+            preocuparse, podremos defendernos con el inglés.
+          </Card>
+          <Card title="Moneda">
+            La moneda usada en Hungría es el forinto húngaro(HUF). La conversión
+            al euro sería de 1EUR = 420HUF aproximádamente (A fecha de hoy).
+          </Card>
+        </article>
+      </section>
+      <section class="min-h-screen py-4 mb-12">
+        <SectionTitle extraClasses="text-primary text-center"
+          >Sabías que...</SectionTitle
+        >
       </section>
     </main>
   </body>

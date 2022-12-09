@@ -1,0 +1,30 @@
+---
+const { pictures } = Astro.props;
+---
+
+<style>
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+<div
+  class="slider grid grid-flow-col gap-x-4 overflow-x-scroll max-w-full snap-mandatory snap-x"
+>
+  {
+    pictures.map((el) => {
+      return (
+        <div class="w-72 relative group rounded-sm">
+          <img
+            src={el.source}
+            alt={el.title}
+            loading="lazy"
+            class="aspect-square object-cover w-full snap-start rounded-sm"
+          />
+          <div class="w-full lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-150 ease-in-out absolute bottom-0 left-0 px-4 pb-4 pt-36 bg-gradient-to-t from-black/90 to-transparent text-white font-medium text-xl rounded-b-sm">
+            {el.title}
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
