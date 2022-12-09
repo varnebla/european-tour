@@ -1,6 +1,8 @@
 ---
 import BlurredBubble from '../components/BlurredBubble.astro';
 import SectionTitle from '../components/SectionTitle.astro';
+import TimeLineItem from '../components/TimeLineItem.astro';
+import TimeLineGraphic from '../components/TimeLineGraphic.astro';
 
 const heroImageDesktop = '../../assets/images/hero-image-desktop.webp';
 const heroImageLaptop = '../../assets/images/hero-image-laptop.webp';
@@ -100,18 +102,10 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
           planning diario nos resultará más fácil organizar nuestra estancia en
           la ciudad.
         </p>
-        <article class="text-xl relative max-w-fit mx-auto gap-y-6 pl-6">
+        <article class="text-xl relative max-w-fit mx-auto pl-12 mb-36">
           <h2 class="text-3xl font-dm-serif mb-4 text-primary">Día 1</h2>
-          <div
-            class="absolute top-0 bottom-0 right-0 left-0 w-1 h-full bg-black"
-          >
-          </div>
-          <div class="max-w-[50ch] mb-8 relative w-full">
-            <div
-              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
-            >
-            </div>
-            <h3 class="text-2xl font-dm-serif mb-3">Parlamento de Budapest</h3>
+          <TimeLineGraphic />
+          <TimeLineItem title="Parlamento de Budapest">
             <p>
               La primera parada de nuestro viaje es el icónico Parlamento de
               Budapest. Es muy recomendable hacer la visita del interior,
@@ -121,16 +115,8 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
                 class="text-secondary underline decoration-3">web oficial</a
               >.
             </p>
-          </div>
-
-          <div class="max-w-[50ch] mb-8 relative w-full">
-            <div
-              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
-            >
-            </div>
-            <h3 class="text-2xl font-dm-serif mb-3">
-              Free Tour + La Gran Sinagoga
-            </h3>
+          </TimeLineItem>
+          <TimeLineItem title="Free Tour + La Gran Sinagoga">
             <p>
               Una de las mejores maneras de conocer la ciudad es haciendo <em
                 >free tours</em
@@ -139,16 +125,8 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
               centro de la ciudad que finaliza en La Gran Sinagoga, y acceder a
               ella posteriormente.
             </p>
-          </div>
-
-          <div class="max-w-[50ch] relative w-full">
-            <div
-              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
-            >
-            </div>
-            <h3 class="text-2xl font-dm-serif mb-3">
-              Plaza Vorosmarty + Gran Noria de Budapest
-            </h3>
+          </TimeLineItem>
+          <TimeLineItem title="Plaza Vorosmarty + Gran Noria de Budapest">
             <p>
               De camino al siguiente destino, nos cruzaremos con estos dos
               puntos a visitar como son la Gran Noria o la Plaza Vorosmarty. En
@@ -158,14 +136,8 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
                 >Café Gerbeaud</span
               >.
             </p>
-          </div>
-
-          <div class="max-w-[50ch] mb-8 relative w-full">
-            <div
-              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
-            >
-            </div>
-            <h3 class="text-2xl font-dm-serif mb-3">Basílica de San Esteban</h3>
+          </TimeLineItem>
+          <TimeLineItem title="Basílica de San Esteban">
             <p>
               La basílica de San Esteban guarda la reliquia de una mano de San
               Esteban. Su interior es un lugar muy bonito de visitar, pero
@@ -175,14 +147,8 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
                 class="text-secondary underline decoration-3">web oficial</a
               >.
             </p>
-          </div>
-
-          <div class="max-w-[50ch] mb-8 relative w-full">
-            <div
-              class="absolute left-[-2.15rem] top-1 w-6 h-6 rounded-full border-4 border-black bg-background"
-            >
-            </div>
-            <h3 class="text-2xl font-dm-serif mb-3">Ruin bar</h3>
+          </TimeLineItem>
+          <TimeLineItem title="Ruin bar">
             <p>
               Para terminar el día, podemos acercarnos a uno de los famosos <em
                 >ruin bars</em
@@ -192,8 +158,133 @@ const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
                 >bares con aires alternativos y decadentes</span
               > .
             </p>
-          </div>
+          </TimeLineItem>
         </article>
+        <article class="text-xl relative max-w-fit mx-auto pl-12 mb-36">
+          <h2 class="text-3xl font-dm-serif mb-4 text-primary">Día 2</h2>
+          <TimeLineGraphic />
+          <TimeLineItem title="Castillo de Buda">
+            <p>
+              Empezaremos el segundo día visitando el Castillo de Buda. Para
+              ello, subiremos por su <span
+                class="underline decoration-4 decoration-tertiary"
+                >antiguo funicular</span
+              > y una vez allí podremos disfrutar de unas espectaculares vistas de
+              la ciudad y del <span
+                class="underline decoration-4 decoration-tertiary"
+                >cambio de guardia del Palacio Sándor a cada hora en punto</span
+              >. También tenemos la opción de hacer un <em>free tour</em> del castillo.
+            </p>
+          </TimeLineItem>
+          <TimeLineItem title="Fuente de Matías + Bastión de los Pescadores">
+            <p>
+              Alrededor del castillo se encuentra la Fuente de Matías, una
+              bonita fuente recientemente restaurada. Si paseamos por la zona
+              nos encontraremos con una de las estampas más icónicas de la
+              ciudad, en el Bastión de los Pescadores.
+            </p>
+          </TimeLineItem>
+          <TimeLineItem title="Pastelería Ruszwurm">
+            <p>
+              Una parada obligatoria es la pastelería Ruszwurm, una de las más
+              bonitas y antiguas de la ciudad, dónde podremos degustar los <span
+                class="underline decoration-4 decoration-tertiary"
+                ><em>Krémes</em>
+              </span>.
+            </p>
+          </TimeLineItem>
+          <TimeLineItem title="Puente de las cadenas + Los Zapatos del Danubio">
+            <p>
+              Después de comer, un buen plan es cruzar el Puente de las Cadenas
+              y <span class="underline decoration-4 decoration-tertiary"
+                >recorrer la orilla del Danubio</span
+              > hasta el Mercado Central. En el camino, nos encontraremos con la
+              famosa escultura de los Zapatos del Danubio, en memoria de las víctimas
+              de la II Guerra Mundial y la estatua de la <span
+                class="underline decoration-4 decoration-tertiary"
+                >Princesita</span
+              >.
+            </p>
+          </TimeLineItem>
+          <TimeLineItem
+            title="Galería Párisi Udvar + Puente de la Libertad + Mercado Central"
+          >
+            <p>
+              Un poco más adelante en el curso del río podremos hacer una parada
+              en la Galería Párisi Udvar para tomar un café y disfrutar del
+              edificio recién reformado. Más tarde podremos visitar el Puente de
+              la Libertad, también muy pintoresco. Al lado se encuentra el
+              Mercado Central, que podremos visitar por dentro y comprar algún
+              souvenir si se da el caso.
+            </p>
+          </TimeLineItem>
+          <TimeLineItem title="Paseo en barco">
+            <p>
+              Lo mejor que podemos hacer para acabar el día es un <a
+                href="https://www.civitatis.com/es/budapest/paseo-barco-budapest/?aid=1526"
+                class="text-secondary underline decoration-3"
+                >paseo en barco por el Danubio</a
+              > y disfrutar la ciudad desde el río.
+            </p>
+          </TimeLineItem>
+        </article>
+        <article class="text-xl relative max-w-fit mx-auto pl-12">
+          <h2 class="text-3xl font-dm-serif mb-4 text-primary">Día 3</h2>
+          <TimeLineGraphic />
+          <TimeLineItem title="Balneario de Széchenyi">
+            <p>
+              Después de dos días llenos de un sinfín de visitas, nada mejor que
+              reponer fuerzas en el balneario de Széchenyi, un conjunto de
+              piscinas termales al aire libre con <span
+                class="underline decoration-4 decoration-tertiary"
+                >aguas a 30 grados</span
+              >. Tenemos la posibilidad de visitar el balneario de Gellért, pero
+              sus piscinas son de interior.
+            </p>
+          </TimeLineItem>
+          <TimeLineItem title="Plaza de los héroes">
+            <p>
+              Una vez relajados, continuamos nuestra ruta turística por la Plaza
+              de los Héroes, dónde se encuentra las 7 estatuas que conmemoran
+              las <span class="underline decoration-4 decoration-tertiary"
+                >7 tribus fundadoras de Hungría</span
+              >.
+            </p>
+          </TimeLineItem>
+          <TimeLineItem title="Castillo de Vajdahunyad + Parque de la Ciudad">
+            <p>
+              Cerca del anterior destino encontraremos el Castillo de
+              Vajdahunyad, construido para una Expo Universal y el Parque de la
+              Ciudad, dónde encontraremos la famosa <span
+                class="underline decoration-4 decoration-tertiary"
+                >Escultura del anónimo</span
+              >, que fue notario de un antiguo rey húngaro.
+            </p>
+          </TimeLineItem>
+          <TimeLineItem title="Avenida Andrassy + Ópera de Budapest">
+            <p>
+              A partir de ahí, podremos dirigirnos a la Ópera de Budapest a
+              través de la Avenida Andrassy, repleta de <span
+                class="underline decoration-4 decoration-tertiary"
+                >edificios majestuosos de la época imperial</span
+              >. Una vez en la ópera, podremos <a
+                href="https://www.civitatis.com/es/budapest/visita-guiada-opera-budapest?aid=1526"
+                class="text-secondary underline decoration-3"
+                >una visita guiada</a
+              > para conocer su historia.
+            </p>
+          </TimeLineItem>
+          <TimeLineItem title="Extra: New York Cafe">
+            <p>
+              Para terminar nuestra ruta, podemos tomar un café en la cafetería
+              más mítica de la ciudad. No es barato, pero es <span
+                class="underline decoration-4 decoration-tertiary"
+                >toda una experiencia</span
+              > a vivir.
+            </p>
+          </TimeLineItem>
+        </article>
+        <!-- GALERIA DE IMÁGENES AQUI -->
       </section>
     </main>
   </body>
