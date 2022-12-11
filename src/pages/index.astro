@@ -6,12 +6,14 @@ import TimeLineGraphic from '../components/TimeLineGraphic.astro';
 import PhotosSlider from '../components/PhotosSlider.astro';
 import Card from '../components/Card.astro';
 
+type Picture = { source: string; title: string };
+
 const heroImageDesktop = '../../assets/images/hero-image-desktop.webp';
 const heroImageLaptop = '../../assets/images/hero-image-laptop.webp';
 const heroImageTablet = '../../assets/images/hero-image-tablet.webp';
 const heroImageMobile = '../../assets/images/hero-image-mobile.webp';
 
-const firstDayPictures = [
+const firstDayPictures: Picture[] = [
   {
     source: '../../assets/images/timeline/parlamento.webp',
     title: 'Parlamento'
@@ -33,7 +35,7 @@ const firstDayPictures = [
     title: 'Ruin Bar'
   }
 ];
-const secondDayPictures = [
+const secondDayPictures: Picture[] = [
   {
     source: '../../assets/images/timeline/funicular.webp',
     title: 'Funicular'
@@ -67,7 +69,7 @@ const secondDayPictures = [
     title: 'Puente de la Libertad'
   }
 ];
-const thirdDayPictures = [
+const thirdDayPictures: Picture[] = [
   {
     source: '../../assets/images/timeline/balneario.webp',
     title: 'Balneario de Széchenyi'
@@ -87,6 +89,49 @@ const thirdDayPictures = [
   {
     source: '../../assets/images/timeline/new-york-cafe-budapesr.webp',
     title: 'New York Cafe'
+  }
+];
+
+const foodPictures: Picture[] = [
+  {
+    source: '../../assets/images/food/goulash.webp',
+    title: 'Goulash'
+  },
+  {
+    source: '../../assets/images/food/csirkepaprikas.webp',
+    title: 'Csirkepaprikás'
+  },
+  {
+    source: '../../assets/images/food/hungarian-langos-sour.webp',
+    title: 'Langos'
+  },
+  {
+    source: '../../assets/images/food/kolbasz.webp',
+    title: 'Kolbász'
+  },
+  {
+    source: '../../assets/images/food/toltott.webp',
+    title: 'Töltött káposzta'
+  },
+  {
+    source: '../../assets/images/food/rakott.webp',
+    title: 'Rakott krumpli'
+  },
+  {
+    source: '../../assets/images/food/gundel-palacsinta.webp',
+    title: 'Palacsinta'
+  },
+  {
+    source: '../../assets/images/food/kurtoscalacs.webp',
+    title: 'Kürtóskalács'
+  },
+  {
+    source: '../../assets/images/food/dobos.webp',
+    title: 'Tarta dobos'
+  },
+  {
+    source: '../../assets/images/food/goulash.webp',
+    title: 'Kolbász'
   }
 ];
 ---
@@ -393,6 +438,12 @@ const thirdDayPictures = [
         <SectionTitle extraClasses="text-primary text-center"
           >Sabías que...</SectionTitle
         >
+      </section>
+      <section>
+        <SectionTitle extraClasses="text-primary text-center">
+          ¿Qué podemos saborear en Budapest?
+        </SectionTitle>
+        <PhotosSlider pictures={foodPictures} />
       </section>
     </main>
   </body>
