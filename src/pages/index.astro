@@ -191,7 +191,7 @@ const foodPictures: Picture[] = [
         class="w-full flex flex-col md:flex-row md:items-center gap-y-4 gap-x-4 min-h-screen mb-12"
       >
         <article class="w-full flex-col items-center text-xl">
-          <SectionTitle extraClasses="mb-14 text-primary"
+          <SectionTitle extraClasses="lg:mb-14 text-primary"
             >¿Cuándo nos vamos?</SectionTitle
           >
           <p class="max-w-xl">
@@ -411,10 +411,16 @@ const foodPictures: Picture[] = [
         </article>
         <PhotosSlider pictures={thirdDayPictures} />
       </section>
-      <section class="min-h-screen py-4 mb-12">
+      <section class="min-h-screen py-4 mb-12 flex flex-col items-center">
         <SectionTitle extraClasses="text-primary text-center">
           A tener en cuenta:
         </SectionTitle>
+        <p class="max-w-[65ch] text-xl mb-12">
+          Es de suma importancia ir preparados al viaje, no dejar nada a la
+          casualidad y conocer qué nos vamos a encontrar en la ciudad y qué
+          debemos llevar. He aquí una serie de datos importantes que nos
+          facilitar án la puesta a punto para las fechas señaladas.
+        </p>
         <article class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <Card title="Clima">
             Nos encontraremos con un clima primaveral, con temperaturas frescas
@@ -430,16 +436,88 @@ const foodPictures: Picture[] = [
           </Card>
         </article>
       </section>
-      <section class="min-h-screen py-4 mb-12">
+      <section class="min-h-screen py-4 mb-12 flex flex-col items-center">
         <SectionTitle extraClasses="text-primary text-center"
           >Sabías que...</SectionTitle
         >
+        <p class="max-w-[65ch] text-xl mb-6">
+          Nada mejor que conocer los datos curiosos de esta preciosa ciudad para
+          acabar de convenceros de que es la mejor elección que podéis hacer.
+          ¡Apostamos que éstas no os la sabíais!
+        </p>
+        <article
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full gap-x-8 gap-y-12"
+        >
+          <Card extraClasses="border-l-2 border-secondary">
+            Budapest no siempre fue la capital de Hungría. Esztergom, lugar de
+            nacimiento de San Esteban, fue la capital hasta que en el siglo
+            XIII, con la invasión de los mongolos, la corona se trasladó a Buda
+            y más tarde se unió a Pest y Óbuda para crear la ciudad que
+            conocemos.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            Budapest tiene la línea de metro más antigua de la Europa
+            continental después de Londres. Su metro se inauguró en 1896, el año
+            que Hungría cumplía su 1000 aniversario, es por eso que se le llama
+            Metro del Milenio.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            El parlamento de Hungría es el tercero más grande del mundo, solo
+            superado por el rumano y el argentino. Además, su sinagoga es la
+            segunda más grande del mundo, con capacidad para 3000 fieles.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            Budapest es una ciudad con muchas supersticiones. Como ejemplo,
+            existe el mito de que cerca de la Basílica de San Esteban hay una
+            estatua que si le tocas el bigote da suerte y si además tocas la
+            barriga al policía no engordarás. Por probar que no sea.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            ¡Está mal visto brindar! En toda Hungría en general, desde 1849. Ese
+            año los húngaros sufrieron una derrota a manos de los austríacos, y
+            se dice que éstos brindaron para celebrarlo.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            Budapest estuvo a punto de llamarse Pestbuda. Debido a la unión de
+            las dos ciudades, cada una quería el nombre de la suya al principio,
+            pero finalmente se determinó que Buda fuera la primera por estar más
+            al oeste.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            Están prohibidos los rascacielos. Ningún edificio puede superar los
+            96 metros de altura debido a una ley que reserva el privilegio de
+            ser los edificios más altos al Parlamento y a la Basílica de San
+            Esteban.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            Hay un árbol dedicado a Michael Jackson. Se encuentra en Erzsébert
+            tér, donde está el hotel en el que solía alojarse cuando visitaba la
+            ciudad. Aún hoy, sus fans siguen dejando flores, fotos y textos
+            dedicados a su ídolo.
+          </Card>
+        </article>
       </section>
-      <section>
+      <section
+        class="min-h-screen flex flex-col items-center text-xl py-4 mb-12"
+      >
         <SectionTitle extraClasses="text-primary text-center">
-          ¿Qué podemos saborear en Budapest?
+          ¿Qué podremos saborear en Budapest?
         </SectionTitle>
+        <p class="max-w-[65ch] text-left mb-4">
+          Hay ciudades que te conquistan por el estómago, y Budapest es una de
+          ellas. La ciudad esconde tesoros gastronómicos que pondrán la guinda a
+          nuestro viaje. Esperamos que os guste el <em>paprika</em>, pues es un
+          ingrediente nacional y la mayoría de sus platos lo llevan.
+        </p>
+        <p class="w-full max-w-[65ch] mb-12 text-left">
+          Aquí van algunos de los platos más típicos del lugar:
+        </p>
         <PhotosSlider pictures={foodPictures} />
+      </section>
+      <section class="min-h-screen flex flex-col items-center">
+        <SectionTitle extraClasses="text-primary"
+          >Pero, ¿cuánto me va a costar?</SectionTitle
+        >
       </section>
     </main>
   </body>
