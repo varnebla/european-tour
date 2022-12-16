@@ -5,6 +5,7 @@ import TimeLineItem from '../components/TimeLineItem.astro';
 import TimeLineGraphic from '../components/TimeLineGraphic.astro';
 import PhotosSlider from '../components/PhotosSlider.astro';
 import Card from '../components/Card.astro';
+import ArrowRightIcon from '../components/ArrowRightIcon.astro';
 
 type Picture = { source: string; title: string };
 
@@ -135,7 +136,11 @@ const foodPictures: Picture[] = [
 <html lang="en" class="min-h-screen">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -146,18 +151,13 @@ const foodPictures: Picture[] = [
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Euro Tour</title>
   </head>
   <body class="flex flex-col min-h-screen font-dm-sans bg-background">
     <div
       aria-hidden="true"
       class="absolute inset-0 z-0 overflow-hidden pointer-events-none"
     >
-      <BlurredBubble color="#22c55e" customClass="w-96 h-96 left-14 top-0" />
-      <BlurredBubble
-        color="#cf2436"
-        customClass="w-96 h-96 right-14 top-[500px]"
-      />
       <div
         aria-hidden="true"
         class="absolute z-0 inset-0 min-h-screen brightness-50 saturate-50"
@@ -195,7 +195,7 @@ const foodPictures: Picture[] = [
             >¿Cuándo nos vamos?</SectionTitle
           >
           <p class="max-w-xl">
-            Proponemos realizar esta aventura en la
+            Proponemos realizar esta aventura de 3 días en la
             <span class="underline decoration-4 decoration-tertiary">
               primavera de 2023</span
             >. Durante esa época, podremos conocer los lugares de interés y
@@ -205,7 +205,7 @@ const foodPictures: Picture[] = [
           <p class="max-w-xl">
             Según datos de skyscanner, las
             <span class="underline decoration-4 decoration-tertiary"
-              >fechas más baratas son las de abril.</span
+              >fechas más baratas son las de abril y mayo.</span
             >
           </p>
         </article>
@@ -411,95 +411,7 @@ const foodPictures: Picture[] = [
         </article>
         <PhotosSlider pictures={thirdDayPictures} />
       </section>
-      <section class="min-h-screen py-4 mb-12 flex flex-col items-center">
-        <SectionTitle extraClasses="text-primary text-center">
-          A tener en cuenta:
-        </SectionTitle>
-        <p class="max-w-[65ch] text-xl mb-12">
-          Es de suma importancia ir preparados al viaje, no dejar nada a la
-          casualidad y conocer qué nos vamos a encontrar en la ciudad y qué
-          debemos llevar. He aquí una serie de datos importantes que nos
-          facilitar án la puesta a punto para las fechas señaladas.
-        </p>
-        <article class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <Card title="Clima">
-            Nos encontraremos con un clima primaveral, con temperaturas frescas
-            cercanas a los 20 grados durante el día y 10 grados por la noche.
-          </Card>
-          <Card title="Idioma">
-            El idioma utilizado en Hungría es el húngaro, pero no hay que
-            preocuparse, podremos defendernos con el inglés.
-          </Card>
-          <Card title="Moneda">
-            La moneda usada en Hungría es el forinto húngaro(HUF). La conversión
-            al euro sería de 1EUR = 420HUF aproximádamente (A fecha de hoy).
-          </Card>
-        </article>
-      </section>
-      <section class="min-h-screen py-4 mb-12 flex flex-col items-center">
-        <SectionTitle extraClasses="text-primary text-center"
-          >Sabías que...</SectionTitle
-        >
-        <p class="max-w-[65ch] text-xl mb-6">
-          Nada mejor que conocer los datos curiosos de esta preciosa ciudad para
-          acabar de convenceros de que es la mejor elección que podéis hacer.
-          ¡Apostamos que éstas no os la sabíais!
-        </p>
-        <article
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full gap-x-8 gap-y-12"
-        >
-          <Card extraClasses="border-l-2 border-secondary">
-            Budapest no siempre fue la capital de Hungría. Esztergom, lugar de
-            nacimiento de San Esteban, fue la capital hasta que en el siglo
-            XIII, con la invasión de los mongolos, la corona se trasladó a Buda
-            y más tarde se unió a Pest y Óbuda para crear la ciudad que
-            conocemos.
-          </Card>
-          <Card extraClasses="border-l-2 border-secondary">
-            Budapest tiene la línea de metro más antigua de la Europa
-            continental después de Londres. Su metro se inauguró en 1896, el año
-            que Hungría cumplía su 1000 aniversario, es por eso que se le llama
-            Metro del Milenio.
-          </Card>
-          <Card extraClasses="border-l-2 border-secondary">
-            El parlamento de Hungría es el tercero más grande del mundo, solo
-            superado por el rumano y el argentino. Además, su sinagoga es la
-            segunda más grande del mundo, con capacidad para 3000 fieles.
-          </Card>
-          <Card extraClasses="border-l-2 border-secondary">
-            Budapest es una ciudad con muchas supersticiones. Como ejemplo,
-            existe el mito de que cerca de la Basílica de San Esteban hay una
-            estatua que si le tocas el bigote da suerte y si además tocas la
-            barriga al policía no engordarás. Por probar que no sea.
-          </Card>
-          <Card extraClasses="border-l-2 border-secondary">
-            ¡Está mal visto brindar! En toda Hungría en general, desde 1849. Ese
-            año los húngaros sufrieron una derrota a manos de los austríacos, y
-            se dice que éstos brindaron para celebrarlo.
-          </Card>
-          <Card extraClasses="border-l-2 border-secondary">
-            Budapest estuvo a punto de llamarse Pestbuda. Debido a la unión de
-            las dos ciudades, cada una quería el nombre de la suya al principio,
-            pero finalmente se determinó que Buda fuera la primera por estar más
-            al oeste.
-          </Card>
-          <Card extraClasses="border-l-2 border-secondary">
-            Están prohibidos los rascacielos. Ningún edificio puede superar los
-            96 metros de altura debido a una ley que reserva el privilegio de
-            ser los edificios más altos al Parlamento y a la Basílica de San
-            Esteban.
-          </Card>
-          <Card extraClasses="border-l-2 border-secondary">
-            Hay un árbol dedicado a Michael Jackson. Se encuentra en Erzsébert
-            tér, donde está el hotel en el que solía alojarse cuando visitaba la
-            ciudad. Aún hoy, sus fans siguen dejando flores, fotos y textos
-            dedicados a su ídolo.
-          </Card>
-        </article>
-      </section>
-      <section
-        class="min-h-screen flex flex-col items-center text-xl py-4 mb-12"
-      >
+      <section class="flex flex-col items-center text-xl py-4 mb-12">
         <SectionTitle extraClasses="text-primary text-center">
           ¿Qué podremos saborear en Budapest?
         </SectionTitle>
@@ -514,10 +426,272 @@ const foodPictures: Picture[] = [
         </p>
         <PhotosSlider pictures={foodPictures} />
       </section>
-      <section class="min-h-screen flex flex-col items-center">
+      <section class="flex flex-col items-center text-xl py-4 mb-12">
+        <SectionTitle extraClasses="text-primary text-center">
+          ¿Dónde podemos comer?
+        </SectionTitle>
+        <p class="max-w-[65ch] text-left mb-4">
+          He aquí una lista de restaurantes, cafeterías y terrazas que podemos
+          visitar para degustar la comida típica húngara o, símplemente, parar a
+          reponer fuerzas para nuestra aventura.
+        </p>
+        <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4">
+          <Card title="Hungarikum Bistro">
+            <p class="mb-3">
+              Comida típica, sitio perfecto para probar el goulash.
+            </p>
+            <a
+              href="https://www.tripadvisor.es/Restaurant_Review-g274887-d3351231-Reviews-Hungarikum_Bisztro-Budapest_Central_Hungary.html"
+              class="text-secondary flex items-center"
+              target="_blank"
+            >
+              <span class="underline">Más info</span>
+              <ArrowRightIcon />
+            </a>
+          </Card>
+          <Card title="Menza">
+            <p class="mb-3">
+              Comida tradicional a buen precio. De los restaurantes con mejor
+              opinión en Trip Advisor.
+            </p>
+            <a
+              href="https://www.tripadvisor.es/Restaurant_Review-g274887-d696068-Reviews-Menza-Budapest_Central_Hungary.html"
+              class="text-secondary flex items-center"
+              target="_blank"
+            >
+              <span class="underline">Más info</span>
+              <ArrowRightIcon />
+            </a>
+          </Card>
+          <Card title="Hungarikum Bistro">
+            <p class="mb-3">
+              Restaurante de comida rápida con muy buenas opiniones. Perfecto
+              para probar el langos.
+            </p>
+            <a
+              href="https://www.tripadvisor.es/Restaurant_Review-g274887-d3351231-Reviews-Hungarikum_Bisztro-Budapest_Central_Hungary.html"
+              class="text-secondary flex items-center"
+              target="_blank"
+            >
+              <span class="underline">Más info</span>
+              <ArrowRightIcon />
+            </a>
+          </Card>
+          <Card title="Rapaz">
+            <p class="mb-3">Comida rápida y local rica a muy buen precio.</p>
+            <a
+              href="https://www.tripadvisor.es/Restaurant_Review-g274887-d3351231-Reviews-Hungarikum_Bisztro-Budapest_Central_Hungary.html"
+              class="text-secondary flex items-center"
+              target="_blank"
+            >
+              <span class="underline">Más info</span>
+              <ArrowRightIcon />
+            </a>
+          </Card>
+          <Card title="Madhouse By Mad Scientist">
+            <p class="mb-3">Cerveza artesanal y picoteo.</p>
+            <a
+              href="https://www.tripadvisor.es/Restaurant_Review-g274887-d21317628-Reviews-Madhouse_By_Mad_Scientist-Budapest_Central_Hungary.html"
+              class="text-secondary flex items-center"
+              target="_blank"
+            >
+              <span class="underline">Más info</span>
+              <ArrowRightIcon />
+            </a>
+          </Card>
+          <Card title="Al Dente">
+            <p class="mb-3">Comida italiana en el centro de Budapest.</p>
+            <a
+              href="https://www.tripadvisor.es/Restaurant_Review-g274887-d10287366-Reviews-Al_Dente-Budapest_Central_Hungary.html"
+              class="text-secondary flex items-center"
+              target="_blank"
+            >
+              <span class="underline">Más info</span>
+              <ArrowRightIcon />
+            </a>
+          </Card>
+        </article>
+      </section>
+      <section class="flex flex-col items-center text-xl mb-12">
+        <SectionTitle extraClasses="text-primary"
+          >¿Dónde nos podemos alojar?
+        </SectionTitle>
+        <p class="max-w-[65ch] text-left mb-4">
+          La mejor zona para alojarse en la ciudad es el centro. Podemos
+          encontrar habitaciones por aproximádamente <span
+            class="underline decoration-4 decoration-tertiary"
+            >50-75 euros por persona y noche</span
+          >, muy bien ubicados y con buenas reseñas en las principales webs de
+          reserva. Aquí tenemos dos muy buenas opciones:
+        </p>
+        <article class="flex flex-col md:flex-row gap-10">
+          <Card title="Roombach Hotel Budapest Center">
+            <p class="mb-4">75 euros pax/noche</p>
+            <img
+              src="../assets/images/mapa_roombach.webp"
+              alt=""
+              class="max-w-[22rem]"
+            />
+            <a
+              href="https://www.booking.com/hotel/hu/roombach-budapest-center.html?aid=827734&sid=5c9c131e0f14e4284b018bb2dd94ceb5&sb=1&src=hotel&src_elem=sb&error_url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fhu%2Froombach-budapest-center.es.html%3Faid%3D827734%26sid%3D5c9c131e0f14e4284b018bb2dd94ceb5%26dist%3D0%3Broom1%3DA%252CA%3Bsb_price_type%3Dtotal%3Btype%3Dtotal%26%26&highlighted_hotels=844813&hp_sbox=1&origin=hp&hp_avform=1&do_availability_check=on&checkin_year=2023&checkin_month=4&checkin_monthday=28&checkout_year=2023&checkout_month=4&checkout_monthday=30&group_adults=6&group_children=0&no_rooms=1&b_h4u_keep_filters=&from_sf=1#map_closed"
+              class="text-secondary flex items-center"
+              target="_blank"
+            >
+              <span class="underline">Más info</span>
+              <ArrowRightIcon />
+            </a>
+          </Card>
+          <Card title="D8 Hotel">
+            <p class="mb-4">50 euros pax/noche</p>
+            <img
+              src="../assets/images/mapa_d8.webp"
+              alt=""
+              class="max-w-[22rem]"
+            />
+            <a
+              href="https://www.booking.com/hotel/hu/d8.html?aid=827734&sid=5c9c131e0f14e4284b018bb2dd94ceb5;checkin=2023-04-28;checkout=2023-04-30;room1=A,A,A,A,A,A;homd=1;srpvid=8219a061c66d014d;srepoch=1671231084;atlas_src=hp_iw_btn#map_closed"
+              class="text-secondary flex items-center"
+              target="_blank"
+            >
+              <span class="underline">Más info</span>
+              <ArrowRightIcon />
+            </a>
+          </Card>
+        </article>
+      </section>
+      <section class="flex flex-col items-center text-xl mb-12">
+        <SectionTitle extraClasses="text-primary"
+          >¿Cómo nos moveremos por Budapest?
+        </SectionTitle>
+        <p class="max-w-[65ch] text-left mb-4">
+          Budapest es una ciudad muy bien comunicada. Al estar alojados en el
+          centro y estar las rutas centradas en pasear por esa zona, <span
+            class="underline decoration-4 decoration-tertiary"
+            >podemos realizar todo nuestro viaje a pie</span
+          >. Peor si queremos visitar algún punto de la ciudad más alejado, lo
+          mejor es usar el <span
+            class="underline decoration-4 decoration-tertiary"
+            >metro o tranvía</span
+          >.
+        </p>
+        <p class="max-w-[65ch] text-left mb-4">
+          Las tarjetas de transporte se pueden adquirir en las oficinas de
+          transporte del aeropuerto. Disponen de tarjetas de <span
+            class="underline decoration-4 decoration-tertiary"
+            >1, 3 y 7 días</span
+          > y cuestan alrededor de <span
+            class="underline decoration-4 decoration-tertiary"
+            >5, 13 y 16 euros</span
+          > respectivamente.
+        </p>
+      </section>
+      <section class="py-4 mb-12 flex flex-col items-center">
+        <SectionTitle extraClasses="text-primary text-center">
+          A tener en cuenta:
+        </SectionTitle>
+        <p class="max-w-[65ch] text-xl mb-12">
+          Es de suma importancia ir preparados al viaje, no dejar nada a la
+          casualidad y conocer qué nos vamos a encontrar en la ciudad y qué
+          debemos llevar. He aquí una serie de datos importantes que nos
+          facilitar án la puesta a punto para las fechas señaladas.
+        </p>
+        <article class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Card title="Clima">
+            Nos encontraremos con un clima primaveral, con temperaturas frescas
+            cercanas a los 17 grados durante el día y 8 grados por la noche. Es
+            probable que necesitemos paraguas.
+          </Card>
+          <Card title="Idioma">
+            El idioma utilizado en Hungría es el húngaro, pero no hay que
+            preocuparse, podremos defendernos con el inglés.
+          </Card>
+          <Card title="Moneda">
+            La moneda usada en Hungría es el forinto húngaro(HUF). La conversión
+            al euro sería de 1EUR = 420HUF aproximádamente (A fecha de hoy).
+          </Card>
+        </article>
+      </section>
+      <section class="py-4 mb-12 flex flex-col items-center">
+        <SectionTitle extraClasses="text-primary text-center"
+          >Sabías que...</SectionTitle
+        >
+        <p class="max-w-[65ch] text-xl mb-6">
+          Nada mejor que conocer los datos curiosos de esta preciosa ciudad para
+          acabar de convenceros de que es la mejor elección que podéis hacer.
+          ¡Apostamos que éstas no os la sabíais!
+        </p>
+        <article
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full gap-x-8 gap-y-12"
+        >
+          <Card extraClasses="border-l-2 border-secondary">
+            <span class="underline decoration-4 decoration-tertiary"
+              >Budapest no siempre fue la capital de Hungría</span
+            >. Esztergom, lugar de nacimiento de San Esteban, fue la capital
+            hasta que en el siglo XIII, con la invasión de los mongolos, la
+            corona se trasladó a Buda y más tarde se unió a Pest y Óbuda para
+            crear la ciudad que conocemos.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            <span class="underline decoration-4 decoration-tertiary"
+              >Budapest tiene la línea de metro más antigua de la Europa
+              continental después de Londres</span
+            >. Su metro se inauguró en 1896, el año que Hungría cumplía su 1000
+            aniversario, es por eso que se le llama Metro del Milenio.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            <span class="underline decoration-4 decoration-tertiary"
+              >El parlamento de Hungría es el tercero más grande del mundo</span
+            >, solo superado por el rumano y el argentino. Además, su sinagoga
+            es la segunda más grande del mundo, con capacidad para 3000 fieles.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            <span class="underline decoration-4 decoration-tertiary"
+              >Budapest es una ciudad con muchas supersticiones</span
+            >. Como ejemplo, existe el mito de que cerca de la Basílica de San
+            Esteban hay una estatua que si le tocas el bigote da suerte y si
+            además tocas la barriga al policía no engordarás. Por probar que no
+            sea.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            <span class="underline decoration-4 decoration-tertiary"
+              >¡Está mal visto brindar!</span
+            > En toda Hungría en general, desde 1849. Ese año los húngaros sufrieron
+            una derrota a manos de los austríacos, y se dice que éstos brindaron
+            para celebrarlo.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            <span class="underline decoration-4 decoration-tertiary"
+              >Budapest estuvo a punto de llamarse Pestbuda.</span
+            > Debido a la unión de las dos ciudades, cada una quería el nombre de
+            la suya al principio, pero finalmente se determinó que Buda fuera la
+            primera por estar más al oeste.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            <span class="underline decoration-4 decoration-tertiary"
+              >Están prohibidos los rascacielos.</span
+            > Ningún edificio puede superar los 96 metros de altura debido a una
+            ley que reserva el privilegio de ser los edificios más altos al Parlamento
+            y a la Basílica de San Esteban.
+          </Card>
+          <Card extraClasses="border-l-2 border-secondary">
+            <span class="underline decoration-4 decoration-tertiary"
+              >Hay un árbol dedicado a Michael Jackson</span
+            >. Se encuentra en Erzsébert tér, donde está el hotel en el que
+            solía alojarse cuando visitaba la ciudad. Aún hoy, sus fans siguen
+            dejando flores, fotos y textos dedicados a su ídolo.
+          </Card>
+        </article>
+      </section>
+      <section class="flex flex-col items-center mb-36">
         <SectionTitle extraClasses="text-primary"
           >Pero, ¿cuánto me va a costar?</SectionTitle
         >
+        <p class="max-w-[65ch] text-xl mb-6">
+          Haciendo un cálculo aproximado, en el que incluimos vuelos,
+          alojamiento, comida y posibles actividades, el dinero a invertir en
+          este viaje sería de:
+        </p>
+        <p class="text-3xl font-semibold">350-400 euros/pax</p>
       </section>
     </main>
   </body>
